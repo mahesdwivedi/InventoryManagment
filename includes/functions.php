@@ -36,15 +36,15 @@ function getPDO() {
 function loginCheck($require=LOGIN_REQUIRE) {
   if ($require == LOGIN_REQUIRE) {
     if(!isset($_SESSION["login_user"] )){
-      header("Location:form.php");
+      header("Location:login.php");
       exit;
     }
   }
-  if ($require == LOGIN_NOT_REQUIRE) {
-    if(isset($_SESSION["login_user"] )){
-      header("Location:test.php");
-      exit;
-    }
-  }
+  // if ($require == LOGIN_NOT_REQUIRE) {
+  //   if(isset($_SESSION["login_user"] )){
+  //     header("Location:test.php");
+  //     exit;
+  //   }
+  // }
 }
 ?>
