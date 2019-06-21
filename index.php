@@ -21,7 +21,8 @@ if(!empty($_POST)){
        }
      } elseif($_SESSION['flag'] ==1){
 
-     $sql='INSERT INTO product_detail (name,description,sku) VALUES ("'.$_POST["productname"].'","'.$_POST["productdesc"].'","'.$_POST["sku"].'");';
+     $sql='INSERT INTO product_detail (name,description,sku,status)
+           VALUES ("'.$_POST["productname"].'","'.$_POST["productdesc"].'","'.$_POST["sku"].'","'.$_POST["status"].'");';
 // echo $sql;
      getPDO()->exec($sql);
 
@@ -31,10 +32,11 @@ if(!empty($_POST)){
        }
 
        if($product && $sku) {
-         $generator = new Picqer\Barcode\BarcodeGeneratorPNG();
+         $generator = new Picqer\Barcode\BarcodeGeneratorHTML();
          // $code = hash('ripemd160', $result[0]["name"].$result[0]["sku"]);
          $barcode = $generator->getBarcode($product.$sku, $generator::TYPE_CODE_128);
 
+        $_SESSION['barcode']=$product.$sku;
        }
      //
        } catch(Exception $e) {
@@ -50,7 +52,7 @@ if(!empty($_POST)){
     <div class="col-md-6 product-search">
       <form  action="index.php" method="post">
       <input type="text" name="name" placeholder="Search the product ...">
-      <button type="submit" name="button">Search</button>
+      <button type="submit" name="button"><i class="fa fa-search"></i></button>
     </form>
     </div>
     <div class="col-md-6 product-details">
@@ -62,14 +64,24 @@ if(!empty($_POST)){
         <p>name:<?php echo $result[0]["name"]; ?></p>
           <p>description:<?php echo $result[0]["description"]; ?></p>
             <p> Unique ID:<?php echo $result[0]["sku"]; ?></p>
+            <form action = "barcode.php"><button type='submit'>Generate Barcode</a></form>
         <?php
       } else{?>
         <p>Product not found. Please add the new product</p>
         <form  action="index.php" method="post">
-        Product Name<input type="text" name="productname" value="<?php echo $_POST['name'];?>">
+          <div class="container">
+            <div class="row">
+          Product Name<input type="text" name="productname" value="<?php echo $_POST['name'];?>">
+        </div>
+        <div class="row">
         Product Description<input type="text" name="productdesc">
+      </div>
+      <div class="row">
         Product Unique ID<input type="text" name="sku">
+      </div>
+      <input type="hidden" name="status" value="active">
         <button type="submit" name="button">Add New</button>
+      </div>
       </form>
     <?php
   $_SESSION['flag']= 1;

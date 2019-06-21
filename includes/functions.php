@@ -36,7 +36,7 @@ function getPDO() {
 function loginCheck($require=LOGIN_REQUIRE) {
   if ($require == LOGIN_REQUIRE) {
     if(!isset($_SESSION["login_user"] )){
-      header("Location:login.php");
+      header("Location:http://localhost/inventory/login.php");
       exit;
     }
   }

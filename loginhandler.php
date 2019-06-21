@@ -1,10 +1,7 @@
 <?php require_once 'includes/functions.php';
 loginCheck(LOGIN_NOT_REQUIRE);
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "inventory";
+
 
 $name = isset($_POST['name'])  ? trim($_POST['name']) : null;
 $pass =  isset($_POST['password'])  ? trim($_POST['password']) : null;
@@ -19,18 +16,9 @@ if (empty($name) || empty($pass)) {
   header("Location:login.php");
   exit;
 }
-// try{
-//   $sql="INSERT INTO login_detail VALUES ('$name');";
-//   $stmt=getPDO()->prepare($sql);
-//   $stmt->execute();
-// }
-// catch(Exception $e) {
-//
-//       $_SESSION["error"] = $e->getMessage();
-//       header("Location:login.php");
-//       exit;
-// }
-
+if (!filter_var($_POST['name'], FILTER_VALIDATE_EMAIL)) {
+  $_SESSION["error2"]="Invalid email address";
+}
 try {
    $sql="select * from user_detail where username= ? AND password= ?";
    $stmt= getPDO()->prepare($sql);
