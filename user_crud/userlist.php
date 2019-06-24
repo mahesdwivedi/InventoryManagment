@@ -17,6 +17,8 @@ $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
       <th scope="col">Emp ID</th>
       <th scope="col">Name</th>
       <th scope="col">Role</th>
+      <th></th>
+      <th scope="col">Image</th>
 
     </tr>
   </thead>
@@ -28,9 +30,15 @@ foreach($result as $res){
       echo '<th scope="row">'.$res['emp_id'].'</th>';
         echo '<td>'.$res['firstname'].' '.$res['lastname'].'</td>';
         echo '<td>'.$res['role'].'</td>';
-        echo '<td><a href="delete.php?'.'id='.$res['id'].'"<button type="button" class="btn btn-danger"><i class="fa fa-trash" ></i> Delete</button></a>
-                  <a href="update.php?'.'id='.$res['id'].'"<button type="button" class="btn btn-warning"><i class="fa fa-pencil"></i> Update</button></a>
-                  <a href="read.php?'.'id='.$res['id'].'"<button type="button" class="btn btn-info"><i class="fa fa-eye"></i> Read</button></a></td>';
+        echo '<td><a href="delete.php?'.'id='.$res['id'].'"<button type="button"
+                  class="btn btn-danger"><i class="fa fa-trash" ></i> Delete</button></a>
+                  <a href="update.php?'.'id='.$res['id'].'"<button type="button"
+                  class="btn btn-warning"><i class="fa fa-pencil"></i> Update</button></a>
+                  <a href="read.php?'.'id='.$res['id'].'"<button type="button"
+                  class="btn btn-info"><i class="fa fa-eye"></i> Read</button></a>
+
+              </td>';
+        echo '<td><img src="../assest/image/'.$res['image'].'" height="50" width="50" ></img></td>';
   echo '</tr>';
 }
 

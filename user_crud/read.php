@@ -7,6 +7,7 @@ $sql="select * from user_detail where id= ?";
 $stmt= getPDO()->prepare($sql);
 $stmt->execute([$uid]);
 $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+print_r('<img src="../assest/image/'.$result[0]['image'].'" height="50" width="50" ></img> <br>');
 print_r( "Id:".$result[0]['id'].'<br>');
 print_r( "Emp_id: ".$result[0]['emp_id'].'<br>');
 print_r ("Firstname: ".$result[0]['firstname'].'<br>');

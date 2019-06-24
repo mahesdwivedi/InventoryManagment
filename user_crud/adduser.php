@@ -1,5 +1,6 @@
 <?php require_once '../header.php';
       require_once '../includes/functions.php';
+      $target = "/opt/lampp/htdocs/inventory/assest/image/";
 
 if($_POST){
   try {
@@ -11,17 +12,35 @@ if($_POST){
       "'.$_POST['username'].'",
       "'.$_POST['password'].'",
       '.$_POST['role'].');';
-// print_r($sql);
     getPDO()->exec($sql);
 
-   header("Location:userlist.php");
-   exit;
+    header("Location:userlist.php");
+
  }
  catch(Exception $e) {
    echo $e;
-   // header("Location:adduser.php");
-   exit;
  }
+
+ $target = $target . basename( $_FILES['Filename']['name']);
+ $Filename=basename( $_FILES['Filename']['name']);
+ if (move_uploaded_file($_FILES['Filename']['tmp_name'], $target)) {
+   $sql='UPDATE user_detail
+   SET image = ?
+   WHERE username= ?;';
+   $stmt= getPDO()->prepare($sql);
+   $stmt->execute([$Filename,$_POST['username']]);
+   exit;
+ echo $_POST['username'];
+ }
+ else {
+ echo "Move upload seems to be struct !" ;
+
+ }
+ // echo $target;
+ // echo "-------";
+ // echo $Filename;
+ exit;
+
 }
  ?>
  <html lang="en" dir="ltr">
@@ -30,7 +49,7 @@ if($_POST){
     <title></title>
   </head>
   <body>
-    <form action="adduser.php" method="post"class="form-group">
+    <form action="adduser.php" method="post"class="form-group" enctype="multipart/form-data">
       <h2 class="form-signin-heading">Add User</h2>
 
     <b>Employee ID</b><input type="text" name="empid"  class="form-control" placeholder="Employee ID" required="">
@@ -55,7 +74,9 @@ if($_POST){
     <?php } ?>
     </select>
   </div>
-    <input type="submit" value="AddUser" class="btn btn-primary ">
+    <b>image</b>
+    <input type="file" name="Filename">
+    <input TYPE="submit" value="Add user" class="btn btn-primary ">
     <br>
     </form>
   </body>
