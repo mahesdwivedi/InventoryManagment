@@ -2,7 +2,6 @@
 session_start();
 require_once __DIR__ . '/vendor/autoload.php';
 $generator = new Picqer\Barcode\BarcodeGeneratorPNG();
-// $barcode = $generator->getBarcode($_SESSION['barcode'], $generator::TYPE_CODE_128);
 ?>
 <html lang="en" dir="ltr">
   <head>

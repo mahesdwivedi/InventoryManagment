@@ -1,14 +1,15 @@
 <?php
-if(isset($_GET['id'])){
-$uid= $_GET['id'];
+if (isset($_GET['id'])) {
+    $uid= $_GET['id'];
 }
 require_once '../header.php';
 require_once '../includes/functions.php';
+loginCheck(LOGIN_REQUIRE);
 error_reporting(E_ALL & ~E_NOTICE);
-if(isset($_POST["id"]) && !empty($_POST["id"]) ){
-  $sql='UPDATE product_detail SET status= "inactive" where id='.$_POST['id'].';';
-getPDO()->exec($sql);
-header("Location:productlist.php");
+if (isset($_POST["id"]) && !empty($_POST["id"])) {
+    $sql='UPDATE product_detail SET status= "inactive" where id='.$_POST['id'].';';
+    getPDO()->exec($sql);
+    header("Location:productlist.php");
 }
  ?>
 <!DOCTYPE html>

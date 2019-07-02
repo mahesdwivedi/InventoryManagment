@@ -32,11 +32,15 @@ $path= 'http://localhost/inventory/';
         <ul class="nav navbar-nav navbar-right">
           <li><a href="<?php print_r($path); ?>product_crud/productlist.php">Product List</a></li>
           <li><a href="<?php print_r($path); ?>user_crud/userlist.php">User List</a></li>
-          <?php if( isset($_SESSION["login_user"])) {?>
+          <?php if (isset($_SESSION["login_user"])) {
+     ?>
               <li><a href= "<?php print_r($path); ?>logout.php">Logout</a></li>
-          <?php } else { ?>
+          <?php
+ } else {
+     ?>
             <li><a href="<?php print_r($path); ?>login.php">LogIn</a></li>
-        <?php } ?>
+        <?php
+ } ?>
       </ul>
       </div>
     </nav>

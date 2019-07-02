@@ -22,15 +22,15 @@ $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
   <tbody>
 <?php
 
-foreach($result as $res){
-  echo '<tr>';
-      echo '<th scope="row">'.$res['id'].'</th>';
-        echo '<td>'.$res['name'].'</td>';
-        echo '<td>'.$res['description'].'</td>';
-        echo '<td>'.$res['date_of_creation'].'</td>';
-        echo '<td><a href="delete.php?'.'id='.$res['id'].'"<button type="button" class="btn btn-danger"><i class="fa fa-ban" ></i> Set Inactive</button></a>
-                  <a href="read.php?'.'id='.$res['id'].'"<button type="button" class="btn btn-info"><i class="fa fa-eye"></i> Read</button></a></td>';
-  echo '</tr>';
+foreach ($result as $res) {
+    echo '<tr>';
+    echo '<th scope="row">'.$res['id'].'</th>';
+    echo '<td>'.$res['name'].'</td>';
+    echo '<td>'.$res['description'].'</td>';
+    echo '<td>'.$res['date_of_creation'].'</td>';
+    echo '<td><a href="delete.php?'.'id='.$res['id'].'"<button type="button" class="btn btn-danger"><i class="fa fa-ban" ></i> Set Inactive</button></a>
+                  <a href="read2.php?'.'id='.$res['id'].'"<button type="button" class="btn btn-info"><i class="fa fa-eye"></i> Read</button></a></td>';
+    echo '</tr>';
 }
 
 echo "</tbody></table>";

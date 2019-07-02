@@ -1,47 +1,43 @@
 <?php require_once '../header.php';
       require_once '../includes/functions.php';
       $target = "/opt/lampp/htdocs/inventory/assest/image/";
+      loginCheck(LOGIN_REQUIRE);
 
-if($_POST){
-  try {
-    $sql='INSERT INTO user_detail(emp_id,firstname,lastname,email,username,password,role)
-    VALUES('.$_POST['empid'].',
-      "'.$_POST['firstname'].'",
-      "'.$_POST['lastname'].'",
-      "'.$_POST['email'].'",
-      "'.$_POST['username'].'",
-      "'.$_POST['password'].'",
-      '.$_POST['role'].');';
-    getPDO()->exec($sql);
+      if ($_POST) {
+          try {
+              $sql='INSERT INTO user_detail(emp_id,firstname,lastname,email,username,password,role)
+              VALUES('.$_POST['empid'].',
+              "'.$_POST['firstname'].'",
+              "'.$_POST['lastname'].'",
+              "'.$_POST['email'].'",
+              "'.$_POST['username'].'",
+              "'.$_POST['password'].'",
+              '.$_POST['role'].');';
+              getPDO()->exec($sql);
 
-    header("Location:userlist.php");
+              header("Location:userlist.php");
+          } catch (Exception $e) {
+              echo $e;
+          }
 
- }
- catch(Exception $e) {
-   echo $e;
- }
-
- $target = $target . basename( $_FILES['Filename']['name']);
- $Filename=basename( $_FILES['Filename']['name']);
- if (move_uploaded_file($_FILES['Filename']['tmp_name'], $target)) {
-   $sql='UPDATE user_detail
+          $target = $target . basename($_FILES['Filename']['name']);
+          $Filename=basename($_FILES['Filename']['name']);
+          if (move_uploaded_file($_FILES['Filename']['tmp_name'], $target)) {
+              $sql='UPDATE user_detail
    SET image = ?
    WHERE username= ?;';
-   $stmt= getPDO()->prepare($sql);
-   $stmt->execute([$Filename,$_POST['username']]);
-   exit;
- echo $_POST['username'];
- }
- else {
- echo "Move upload seems to be struct !" ;
-
- }
- // echo $target;
- // echo "-------";
- // echo $Filename;
- exit;
-
-}
+              $stmt= getPDO()->prepare($sql);
+              $stmt->execute([$Filename,$_POST['username']]);
+              exit;
+              echo $_POST['username'];
+          } else {
+              echo "Move upload seems to be struct !" ;
+          }
+          // echo $target;
+          // echo "-------";
+          // echo $Filename;
+          exit;
+      }
  ?>
  <html lang="en" dir="ltr">
   <head>
@@ -69,9 +65,11 @@ if($_POST){
     <label for="role">Role</label>
     <select class="form-control" name="role" id="role">
       <?php
-      foreach($result as $res){?>
+      foreach ($result as $res) {
+          ?>
       <option value= "<?php print_r($res['id']) ?>"><?php print_r($res['name']) ?></option>
-    <?php } ?>
+    <?php
+      } ?>
     </select>
   </div>
     <b>image</b>

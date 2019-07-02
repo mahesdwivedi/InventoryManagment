@@ -3,9 +3,9 @@ require_once 'header.php';
  require_once 'includes/functions.php';
 loginCheck(LOGIN_NOT_REQUIRE);
 
-if(isset($_SESSION["error"] )){
-echo   $_SESSION["error"];
-unset($_SESSION["error"]);
+if (isset($_SESSION["error"])) {
+    echo   $_SESSION["error"];
+    unset($_SESSION["error"]);
 }
 // if(isset($_SESSION["error2"] )){
 // echo   $_SESSION["error2"];

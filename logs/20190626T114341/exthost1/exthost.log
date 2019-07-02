@@ -1,0 +1,62 @@
+[2019-06-26 11:43:48.762] [exthost] [info] extension host started
+[2019-06-26 11:43:48.841] [exthost] [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch {"startup":true,"activationEvent":"*"}
+[2019-06-26 11:43:48.841] [exthost] [info] ExtensionService#loadCommonJSModule /usr/share/code/resources/app/extensions/debug-auto-launch/dist/extension
+[2019-06-26 11:43:48.914] [exthost] [info] ExtensionService#_doActivateExtension vscode.emmet {"startup":true,"activationEvent":"*"}
+[2019-06-26 11:43:48.915] [exthost] [info] ExtensionService#loadCommonJSModule /usr/share/code/resources/app/extensions/emmet/dist/extension
+[2019-06-26 11:43:49.015] [exthost] [info] ExtensionService#_doActivateExtension vscode.git {"startup":true,"activationEvent":"*"}
+[2019-06-26 11:43:49.015] [exthost] [info] ExtensionService#loadCommonJSModule /usr/share/code/resources/app/extensions/git/dist/main
+[2019-06-26 11:43:49.168] [exthost] [info] ExtensionService#_doActivateExtension vscode.merge-conflict {"startup":true,"activationEvent":"*"}
+[2019-06-26 11:43:49.168] [exthost] [info] ExtensionService#loadCommonJSModule /usr/share/code/resources/app/extensions/merge-conflict/dist/extension
+[2019-06-26 11:43:49.179] [exthost] [info] eager extensions activated
+[2019-06-26 11:44:43.524] [exthost] [info] ExtensionService#_doActivateExtension vscode.php-language-features {"startup":false,"activationEvent":"onLanguage:php"}
+[2019-06-26 11:44:43.524] [exthost] [info] ExtensionService#loadCommonJSModule /usr/share/code/resources/app/extensions/php-language-features/dist/phpMain
+[2019-06-26 11:45:32.728] [exthost] [info] ExtensionService#_doActivateExtension junstyle.php-cs-fixer {"startup":false,"activationEvent":"onLanguage:php"}
+[2019-06-26 11:45:32.728] [exthost] [info] ExtensionService#loadCommonJSModule /root/.vscode/extensions/junstyle.php-cs-fixer-0.1.119/extension
+[2019-06-26 11:46:00.152] [exthost] [error] [junstyle.php-cs-fixer] provider FAILED
+[2019-06-26 11:46:00.152] [exthost] [error] undefined
+[2019-06-26 11:46:00.249] [exthost] [info] ExtensionService#_doActivateExtension vscode.configuration-editing {"startup":false,"activationEvent":"onLanguage:jsonc"}
+[2019-06-26 11:46:00.249] [exthost] [info] ExtensionService#loadCommonJSModule /usr/share/code/resources/app/extensions/configuration-editing/dist/extension
+[2019-06-26 11:46:00.346] [exthost] [info] ExtensionService#_doActivateExtension vscode.json-language-features {"startup":false,"activationEvent":"onLanguage:jsonc"}
+[2019-06-26 11:46:00.346] [exthost] [info] ExtensionService#loadCommonJSModule /usr/share/code/resources/app/extensions/json-language-features/client/dist/jsonMain
+[2019-06-26 11:46:00.463] [exthost] [info] ExtensionService#_doActivateExtension vscode.typescript-language-features {"startup":false,"activationEvent":"onLanguage:jsonc"}
+[2019-06-26 11:46:00.463] [exthost] [info] ExtensionService#loadCommonJSModule /usr/share/code/resources/app/extensions/typescript-language-features/dist/extension
+[2019-06-26 11:50:43.324] [exthost] [error] [junstyle.php-cs-fixer] provider FAILED
+[2019-06-26 11:50:43.324] [exthost] [error] undefined
+[2019-06-26 11:50:44.950] [exthost] [error] [junstyle.php-cs-fixer] provider FAILED
+[2019-06-26 11:50:44.950] [exthost] [error] undefined
+[2019-06-26 11:50:45.322] [exthost] [error] [junstyle.php-cs-fixer] provider FAILED
+[2019-06-26 11:50:45.322] [exthost] [error] undefined
+[2019-06-26 11:50:45.459] [exthost] [error] [junstyle.php-cs-fixer] provider FAILED
+[2019-06-26 11:50:45.459] [exthost] [error] undefined
+[2019-06-26 11:50:45.656] [exthost] [error] [junstyle.php-cs-fixer] provider FAILED
+[2019-06-26 11:50:45.656] [exthost] [error] undefined
+[2019-06-26 11:50:45.772] [exthost] [error] [junstyle.php-cs-fixer] provider FAILED
+[2019-06-26 11:50:45.772] [exthost] [error] undefined
+[2019-06-26 11:50:46.996] [exthost] [error] [junstyle.php-cs-fixer] provider FAILED
+[2019-06-26 11:50:46.996] [exthost] [error] undefined
+[2019-06-26 11:52:53.128] [exthost] [error] [junstyle.php-cs-fixer] provider FAILED
+[2019-06-26 11:52:53.128] [exthost] [error] undefined
+[2019-06-26 11:53:05.055] [exthost] [error] [junstyle.php-cs-fixer] provider FAILED
+[2019-06-26 11:53:05.055] [exthost] [error] undefined
+[2019-06-26 11:53:59.585] [exthost] [error] [junstyle.php-cs-fixer] provider FAILED
+[2019-06-26 11:53:59.585] [exthost] [error] undefined
+[2019-06-26 11:54:00.875] [exthost] [error] [junstyle.php-cs-fixer] provider FAILED
+[2019-06-26 11:54:00.875] [exthost] [error] undefined
+[2019-06-26 11:54:06.918] [exthost] [error] [junstyle.php-cs-fixer] provider FAILED
+[2019-06-26 11:54:06.918] [exthost] [error] undefined
+[2019-06-26 11:54:18.466] [exthost] [info] ExtensionService#_doActivateExtension vscode.extension-editing {"startup":false,"activationEvent":"onLanguage:json"}
+[2019-06-26 11:54:18.466] [exthost] [info] ExtensionService#loadCommonJSModule /usr/share/code/resources/app/extensions/extension-editing/dist/extension
+[2019-06-26 11:54:18.571] [exthost] [info] ExtensionService#_doActivateExtension vscode.npm {"startup":false,"activationEvent":"onLanguage:json"}
+[2019-06-26 11:54:18.571] [exthost] [info] ExtensionService#loadCommonJSModule /usr/share/code/resources/app/extensions/npm/dist/main
+[2019-06-26 11:56:21.951] [exthost] [info] ExtensionService#_doActivateExtension vscode.grunt {"startup":false,"activationEvent":"onCommand:workbench.action.tasks.runTask"}
+[2019-06-26 11:56:21.952] [exthost] [info] ExtensionService#loadCommonJSModule /usr/share/code/resources/app/extensions/grunt/dist/main
+[2019-06-26 11:56:21.997] [exthost] [info] ExtensionService#_doActivateExtension vscode.gulp {"startup":false,"activationEvent":"onCommand:workbench.action.tasks.runTask"}
+[2019-06-26 11:56:21.997] [exthost] [info] ExtensionService#loadCommonJSModule /usr/share/code/resources/app/extensions/gulp/dist/main
+[2019-06-26 11:56:22.025] [exthost] [info] ExtensionService#_doActivateExtension vscode.jake {"startup":false,"activationEvent":"onCommand:workbench.action.tasks.runTask"}
+[2019-06-26 11:56:22.025] [exthost] [info] ExtensionService#loadCommonJSModule /usr/share/code/resources/app/extensions/jake/dist/main
+[2019-06-26 12:16:36.662] [exthost] [error] [junstyle.php-cs-fixer] provider FAILED
+[2019-06-26 12:16:36.662] [exthost] [error] undefined
+[2019-06-26 12:16:38.538] [exthost] [error] [junstyle.php-cs-fixer] provider FAILED
+[2019-06-26 12:16:38.538] [exthost] [error] undefined
+[2019-06-26 12:17:32.912] [exthost] [error] [junstyle.php-cs-fixer] provider FAILED
+[2019-06-26 12:17:32.912] [exthost] [error] undefined
